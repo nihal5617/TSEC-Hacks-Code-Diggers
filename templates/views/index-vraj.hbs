@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{!-- <link rel="stylesheet" href="css/style.css"> --}}
+    {{!--
+    <link rel="stylesheet" href="css/style.css"> --}}
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <link rel="icon" href="img/logo final.png">
     <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
@@ -19,67 +21,187 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <title>Home</title>
 </head>
+<style>
+    .carousel-open:checked+.carousel-item {
+        position: static;
+        opacity: 100;
+    }
+
+    .carousel-item {
+        -webkit-transition: opacity 0.3s ease-out;
+        transition: opacity 0.3s ease-out;
+    }
+
+    #carousel-1:checked~.control-1,
+    #carousel-2:checked~.control-2,
+    #carousel-3:checked~.control-3 {
+        display: block;
+    }
+
+    .carousel-indicators {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        bottom: 2%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        z-index: 10;
+    }
+
+    #carousel-1:checked~.control-1~.carousel-indicators li:nth-child(1) .carousel-bullet,
+    #carousel-2:checked~.control-2~.carousel-indicators li:nth-child(2) .carousel-bullet,
+    #carousel-3:checked~.control-3~.carousel-indicators li:nth-child(3) .carousel-bullet {
+        color: #a855f7;
+        /*Set to match the Tailwind colour you want the active one to be */
+    }
+
+    .larger-p {
+        font-size: 3rem;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        line-height: 1.2;
+        padding-top: 30px;
+        color: #a855f7;
+    }
+</style>
+
 <body class="flex flex-col min-h-screen font-body">
     {{!-- <div class="flex flex-col min-h-screen"> --}}
         <div class="grow">
             {{>header}}
-            
+
             <section class="">
                 <main class="mx-auto px-10 py-5 text-lg">
-                        <div>
-                            <div class="grid grid-cols-3 lg:gap-3 justify-items-center">
-                                <div class="py-10">
-                                    <div class="rounded overflow-hidden shadow-lg max-w-sm ">
-                                        <div class="w-fit">
-                                            <img src="img/collab.jpg" alt="collab-pic" class="w-full"/>
-                                        </div>
-                                        <div class="px-6 py-4">
-                                            <div class="font-bold text-xl mb-2">
-                                               Collaboration
-                                            </div>
-                                            <p class="text-gray-600">
-                                            Find a group of people who challenge and inspire you, spend a lot of time with them, and it will change your life.
-                                            </p>
+                    <div>
+                        <div class="bg-white leading-normal tracking-normal m-0.5 sm:m-2 w-auto sm:ml-20 sm:mr-5">
+                            <div class="carousel relative shadow-2xl bg-black">
+                                <div class="carousel-inner relative overflow-hidden" style="background-color: #ede9fe;">
+                                    <!--Slide 1-->
+                                    <input class="carousel-open" style="display: none;" type="radio" id="carousel-1"
+                                        name="carousel" aria-hidden="true" hidden="" checked="checked">
+                                    <div class="carousel-item absolute opacity-0 w-fit flex justify-between gap-4"
+                                        style="height: 60vh !important;">
+                                        <img class="block bg-black h-full" src="img/explore1.jpg" alt="">
+                                        <div class="p-10 pt-17" >
+                                            <p class="larger-p">Search your best partners for different projects and explore various domains of your interest easily!</p>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="py-10">
-                                        <div class="rounded overflow-hidden shadow-lg max-w-sm ">
-                                        <div class="w-fit">
-                                            <img src="img/explore.jpg" alt="inspire-pic" class="h-full"/>
-                                        </div>
-                                        <div class="px-6 py-4">
-                                            <div class="font-bold text-xl mb-2">
-                                               Inspire
-                                            </div>
-                                            <p class="text-gray-600">
-                                            Workplace collaboration can increase successful innovation by 15%.We inspire and help you do that.
-                                            </p>
+                                    <label for="carousel-3"
+                                        class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+                                    <label for="carousel-2"
+                                        class="next control-1 w-10 h-10 mr-3 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+
+                                    <!--Slide 2-->
+                                    <input class="carousel-open" style="display: none;" type="radio" id="carousel-2"
+                                        name="carousel" aria-hidden="true" hidden="" checked="checked">
+                                    <div class="carousel-item bg-#ede9fe absolute opacity-0 w-fit flex justify-between"
+                                        style="height: 60vh !important;">
+                                        <img class="block bg-black h-full" src="img/peers.jpg" alt="">
+                                     <div class="p-10 pt-17" >
+                                         <p class="larger-p">Connect and Chat with your peers!</p>
+                                     </div>
+                                    </div>
+                                    <label for="carousel-1"
+                                        class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+                                    <label for="carousel-3"
+                                        class="next control-2 w-10 h-10 mr-3 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+
+                                    <!--Slide 3-->
+                                    <input class="carousel-open" style="display: none;" type="radio" id="carousel-3"
+                                        name="carousel" aria-hidden="true" hidden="" checked="checked">
+                                    <div class="carousel-item bg-#ede9fe absolute opacity-0 w-fit flex justify-between"
+                                        style="height: 60vh !important;">
+                                        <img class="block bg-black h-full" src="img/progress.jpg" alt="">
+                                        <div class="p-10 pt-17" >
+                                            <p class="larger-p">Track your progress based on contributions in your timeline!</p>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="py-10">
-                                    <div class="rounded overflow-hidden shadow-lg max-w-sm">
-                                        <div class="w-fit">
-                                            <img src="img/vision.jpg" alt="vision-pic" class="h-full"/>
-                                        </div>
-                                        <div class="px-6 py-4">
-                                            <div class="font-bold text-xl mb-2">
-                                               Vision
-                                            </div>
-                                            <p class="text-gray-600">
-                                            Vision without action is merely a dream. Action without vision just passes the time. Vision with action can change the world.
-                                            </p>
-                                        </div>
-                                    </div>
+                                    <label for="carousel-2"
+                                        class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+                                    <label for="carousel-1"
+                                        class="next control-3 w-10 h-10 mr-3 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+                                    <!-- Add additional indicators for each slide-->
+                                    <ol class="carousel-indicators">
+                                        <li class="inline-block mr-3">
+                                            <label for="carousel-1"
+                                                class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
+                                        </li>
+                                        <li class="inline-block mr-3">
+                                            <label for="carousel-2"
+                                                class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
+                                        </li>
+                                        <li class="inline-block mr-3">
+                                            <label for="carousel-3"
+                                                class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
+                                        </li>
+                                    </ol>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <main>
+                        <div style="color: #a855f7;">
+                        <h1 class="p-35 pt-10 pb-10 mt-10 mb-2 text-center capitalize font-semibold text-4xl">Best place to find collaboration for your team and individual projects!</h1>
+                        </div>
                     </main>
-            </section>
+                    <div class="grid grid-cols-3 lg:gap-3 justify-items-center">
+                        <div class="py-10">
+                            <div class="rounded overflow-hidden shadow-lg max-w-sm ">
+                                <div class="w-fit">
+                                    <img src="img/collab.jpg" alt="collab-pic" class="w-full" />
+                                </div>
+                                <div class="px-6 py-4">
+                                    <div class="font-bold text-xl mb-2">
+                                        Collaboration
+                                    </div>
+                                    <p class="text-gray-600">
+                                        Find a group of people who challenge and inspire you, spend a lot of time with
+                                        them, and it will change your life.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="py-10">
+                            <div class="rounded overflow-hidden shadow-lg max-w-sm ">
+                                <div class="w-fit">
+                                    <img src="img/explore.jpg" alt="inspire-pic" class="h-full" />
+                                </div>
+                                <div class="px-6 py-4">
+                                    <div class="font-bold text-xl mb-2">
+                                        Inspire
+                                    </div>
+                                    <p class="text-gray-600">
+                                        Workplace collaboration can increase successful innovation by 15%.We inspire and
+                                        help you do that.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="py-10">
+                            <div class="rounded overflow-hidden shadow-lg max-w-sm">
+                                <div class="w-fit">
+                                    <img src="img/vision.jpg" alt="vision-pic" class="h-full" />
+                                </div>
+                                <div class="px-6 py-4">
+                                    <div class="font-bold text-xl mb-2">
+                                        Vision
+                                    </div>
+                                    <p class="text-gray-600">
+                                        Vision without action is merely a dream. Action without vision just passes the
+                                        time. Vision with action can change the world.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
         </div>
+        </main>
+        </section>
+    </div>
 
-        {{>footer}}
+    {{>footer}}
     {{!-- </div> --}}
 </body>
+
 </html>
