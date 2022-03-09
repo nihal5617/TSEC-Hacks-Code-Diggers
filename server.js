@@ -24,7 +24,7 @@ app.use('/',router);
 
 // For index.hbs
 app.get('', (req, res) => {   // Making it Dynamic
-    res.render('index-vraj', {
+    res.render('Home', {
         title: 'Weather',  
         name: 'Ronnit Mirgh'
     });
@@ -38,6 +38,7 @@ app.get('/SignUp', (req, res) => {   // Making it Dynamic
     });
 });
 
+// Extra details
 app.get('/SignUp-2', (req, res) => {   // Making it Dynamic
     res.render('SignUp-2', {
         title: 'Weather',  
@@ -53,7 +54,7 @@ app.get('/Login', (req, res) => {   // Making it Dynamic
     });
 });
 
-// For LogIn.hbs
+// For Profile.hbs
 app.get('/profile', (req, res) => {   // Making it Dynamic
     res.render('Profile', {
         title: 'Weather',  
@@ -61,6 +62,7 @@ app.get('/profile', (req, res) => {   // Making it Dynamic
     });
 });
 
+// after Login
 app.get('/home', (req, res) => {   // Making it Dynamic
     res.render('HomeAfter', {
         title: 'Weather',  
