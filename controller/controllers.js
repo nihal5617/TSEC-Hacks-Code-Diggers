@@ -11,18 +11,19 @@ router.route('/').get((req, res) => {
     });
 })
 
-router.post('/SignUp', (req, res) => {
+router.post('/Signup', (req, res) => {
 
 
-    console.log(res.body);
-    if (req.body._id == '')
-        createUser(req, res);
-    else
-        updateRecord(req, res);
+    console.log(req.body);
+    // if (req.body._id == '')
+    //     createUser(req, res);
+    // else
+    //     updateRecord(req, res);
 });
 
 router.route('/SignUp-2').post((req, res) => {
     console.log(req.body);
+    res.send('NIHAL');
     // if (req.body._id == '')
     //     createUser(req, res);
     // else
