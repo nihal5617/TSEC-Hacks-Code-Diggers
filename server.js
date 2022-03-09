@@ -2,8 +2,8 @@
 const express = require('express');
 const hbs = require('hbs');
 const path = require('path');
-const mongoose= require('mongoose');
-const {router} = require('./controller/controllers.js')
+const mongoose = require('mongoose');
+const { router } = require('./controller/controllers.js')
 
 const app = express();
 
@@ -20,12 +20,12 @@ hbs.registerPartials(partialsPath);   // this hbs.registerPartials take the path
 
 // // Setup Static Directory to serve
 app.use(express.static(publicDirectoryPath));  // this becomes our main directory on our local host
-app.use('/',router);
+app.use('/', router);
 
 // For index.hbs
 app.get('', (req, res) => {   // Making it Dynamic
     res.render('index-vraj', {
-        title: 'Weather',  
+        title: 'Weather',
         name: 'Ronnit Mirgh'
     });
 });
@@ -33,14 +33,14 @@ app.get('', (req, res) => {   // Making it Dynamic
 // For SignUp.hbs
 app.get('/SignUp', (req, res) => {   // Making it Dynamic
     res.render('Signup', {
-        title: 'Weather',  
+        title: 'Weather',
         name: 'Ronnit Mirgh'
     });
 });
 
 app.get('/SignUp-2', (req, res) => {   // Making it Dynamic
     res.render('SignUp-2', {
-        title: 'Weather',  
+        title: 'Weather',
         name: 'Ronnit Mirgh'
     });
 });
@@ -48,7 +48,7 @@ app.get('/SignUp-2', (req, res) => {   // Making it Dynamic
 // For LogIn.hbs
 app.get('/Login', (req, res) => {   // Making it Dynamic
     res.render('Login', {
-        title: 'Weather',  
+        title: 'Weather',
         name: 'Ronnit Mirgh'
     });
 });
@@ -56,21 +56,21 @@ app.get('/Login', (req, res) => {   // Making it Dynamic
 // For LogIn.hbs
 app.get('/profile', (req, res) => {   // Making it Dynamic
     res.render('Profile', {
-        title: 'Weather',  
+        title: 'Weather',
         name: 'Ronnit Mirgh'
     });
 });
 
 app.get('/home', (req, res) => {   // Making it Dynamic
     res.render('HomeAfter', {
-        title: 'Weather',  
+        title: 'Weather',
         name: 'Ronnit Mirgh'
     });
 });
 
 app.get('/network', (req, res) => {   // Making it Dynamic
     res.render('Networks', {
-        title: 'Weather',  
+        title: 'Weather',
         name: 'Ronnit Mirgh'
     });
 });
@@ -84,3 +84,64 @@ const PORT = process.env.PORT || 5000;
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => app.listen(PORT, () => console.log(`Server running on port : ${PORT}`)))
     .catch((error) => console.log(error.message));
+
+
+
+const data = [{
+    email: "nihal@gmail.com",
+    fName: "Nihal",
+    lName: "Gupta",
+    pass: "nihal",
+    about: "Known with coding languages like C++,Python,Html Scored 191 in CS in which C++ and html was there as coding languages and Microprocessor and microcontroller in hardware Got overall 88.46% in 12th with 100/100 in maths Got 97.27 percentile in CET",
+    experience: 1,
+    domain: ["AppDev", "WebDev"],
+    projects: ["StroyTeller", "ABC", "FarmGrow"],
+    followCount: 120,
+    linkedin: "nihal123",
+    github: "nihal123",
+    contests: ["Code-Odyssey", "TSEC-Hacks", "LOC 3.0"],
+}, {
+    email: "rujuta@gmail.cpm",
+    fName: "Rujuta",
+    lName: "Joshi",
+    pass: "rujuta",
+    about: "Hey I'm Rujuta",
+    experience: 2,
+    domain: ["AppDev", "WebDev"],
+    projects: ["Calculator", "UI-Maker", "NotesApp"],
+    followCount: 110,
+    linkedin: "rujuta123",
+    github: "rujuta123",
+    contests: ["LOC 3.0", "TSEC-Hacks"],
+}, , {
+    email: "vraj@gmail.com",
+    fName: "Vraj",
+    lName: "Desai",
+    pass: "vraj",
+    about: "I am currently in my 2nd year I.T and having a first time experience of hackathon. My skill is fronted web development and excited to kick start with it.",
+    experience: 1,
+    domain: ["AppDev", "WebDev"],
+    projects: ["Calculator", "UI-Maker", "NotesApp"],
+    followCount: 140,
+    linkedin: "vrajdomgy",
+    github: "vrajdomgy",
+    contests: ["Tsec-Hacks"],
+}, {
+    email: "ronnit",
+    fName: "Ronnit",
+    lName: "Mirgh",
+    pass: "ronnit",
+    about: "Hi, I am Ronnit Mirgh, a student at IT branch of Dwarkadas Jivanlal Sanghvi college of Engineering. I m good at competitive programming. I take part in various contests on codechef and love to solve them and earn ranking. I know C, C++ and JAVA language. I also have knowledge about web development including both frontend and backend. I do web development using Javascript and NodeJs. I have even made many projects which you can check it out on my GitHub account: https://github.com/Ronnit3012",
+    experience: 2,
+    domain: ["AI-ML", "AppDev", "WebDev"],
+    projects: ["Calculator", "UI-Maker", "NotesApp"],
+    followCount: {
+        typr: Number,
+        default: 0
+    },
+    linkedin: String,
+    github: String,
+    contests: [String],
+    resumeFile: String,
+}
+]
