@@ -6,7 +6,7 @@ const { router } = require('../routes/routes');
 console.log(router);
 
 router.route('/').get((req, res) => {
-    res.render('index-vraj', {
+    res.render('Home', {
         viewTitle: "Insert Employee"
     });
 })
@@ -24,7 +24,16 @@ router.post('/Signup', (req, res) => {
 router.route('/SignUp-2').post((req, res) => {
     console.log(req.body);
     // if (req.body._id == '')
-        createUser(req, res);
+        // createUser(req, res);
+    // else
+    //     updateRecord(req, res);
+    res.send('NIHAL');
+});
+
+router.route('/login').post((req, res) => {
+    console.log(req.body);
+    // if (req.body._id == '')
+        // createUser(req, res);
     // else
     //     updateRecord(req, res);
     res.send('NIHAL');
