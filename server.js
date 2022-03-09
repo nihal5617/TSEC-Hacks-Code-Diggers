@@ -23,7 +23,7 @@ app.use(express.static(publicDirectoryPath));  // this becomes our main director
 
 // For index.hbs
 app.get('', (req, res) => {   // Making it Dynamic
-    res.render('SignUp-2', {
+    res.render('index-vraj', {
         title: 'Weather',  
         name: 'Ronnit Mirgh'
     });
@@ -32,6 +32,13 @@ app.get('', (req, res) => {   // Making it Dynamic
 // For SignUp.hbs
 app.get('/SignUp', (req, res) => {   // Making it Dynamic
     res.render('Signup', {
+        title: 'Weather',  
+        name: 'Ronnit Mirgh'
+    });
+});
+
+app.get('/SignUp/More', (req, res) => {   // Making it Dynamic
+    res.render('SignUp-2', {
         title: 'Weather',  
         name: 'Ronnit Mirgh'
     });
@@ -47,14 +54,14 @@ app.get('/Login', (req, res) => {   // Making it Dynamic
 
 // For LogIn.hbs
 app.get('/profile', (req, res) => {   // Making it Dynamic
-    res.render('index-ronnit', {
+    res.render('Profile', {
         title: 'Weather',  
         name: 'Ronnit Mirgh'
     });
 });
 
-app.get('/Home', (req, res) => {   // Making it Dynamic
-    res.render('index-vraj', {
+app.get('/home', (req, res) => {   // Making it Dynamic
+    res.render('HomeAfter', {
         title: 'Weather',  
         name: 'Ronnit Mirgh'
     });
