@@ -1,7 +1,9 @@
-import mongoose from "mongoose";
+const mongoose =require('mongoose');
 
 const postSchema = mongoose.Schema({
-    userName: String,
+    email: String,
+    fName:String,
+    lName:String,
     pass: String,
     about: String,
     experience: {
@@ -22,4 +24,6 @@ const postSchema = mongoose.Schema({
 
 const Model = mongoose.model('model', postSchema);
 
-export default Model;
+module.exports = {
+    Model
+}
