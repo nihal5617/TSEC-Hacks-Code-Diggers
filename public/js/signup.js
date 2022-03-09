@@ -15,16 +15,16 @@ document.querySelector("#submit-button").addEventListener('click', async () => {
     }
 
     if(password != document.querySelector("#confirm-password").value ){
-        document.querySelector("#confirm-password").value ="";
-        document.querySelector("#password").value ="";
+        document.querySelector("#confirm-password").value = "";
+        document.querySelector("#password").value = "";
         return window.alert("Passwords do not match");
     }
 
-    // const check = document.querySelector('#submit-button').checked;
+    const check = document.querySelector('#terms').checked;
     // console.log(check);
-    // if(check != true) {
-    //     return window.alert("Please accept all the term and conditions");
-    // }
+    if(check === false) {
+        return window.alert("Please accept all the term and conditions");
+    }
 
     const data = {
         email : email,
@@ -33,25 +33,26 @@ document.querySelector("#submit-button").addEventListener('click', async () => {
         lname : lname,
     }
 
-    // const res = await axios({
-    //     method: "POST",
-    //     url: `http://localhost:5000/SignUp`,
-    //     data : data,
-    //     validateStatus: () => true,
-    // })
-    const res = 200;
+    const res = await axios({
+        method: "POST",
+        url: `http://localhost:5000/SignUp-2`,
+        data : data,
+        validateStatus: () => true,
+    })
+    // const res = 200;
     console.log(data);
-    if(res == 200){
+    console.log(res.status);
+    if(res.status == 200){
         console.log('hello');
         console.log(window.location.href);
         window.location.href = "http://localhost:5000/SignUp-2";
-        window.alert("Registration Succesful");
+        // window.alert("Registration Succesful");
     }
     else if (res.status == 409){
-        return window.alert("Email already exists")
+        // return window.alert("Email already exists")
     }
     else{
-        window.alert("Registration Failed");
-        window.location.reload();
+        // window.alert("Registration Failed");
+        // window.location.reload();
     }
 })  

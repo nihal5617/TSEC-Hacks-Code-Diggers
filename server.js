@@ -3,10 +3,11 @@ const express = require('express');
 const hbs = require('hbs');
 const path = require('path');
 const mongoose= require('mongoose');
-// const {router} = require('./routes/routes')
+const {router} = require('./controller/controllers.js')
 
 const app = express();
 
+app.use(express.json());
 // Define paths for Express Configuration
 const publicDirectoryPath = path.join(__dirname, 'public');
 const viewsPath = path.join(__dirname, './templates/views'); // we change the views directory
@@ -19,7 +20,7 @@ hbs.registerPartials(partialsPath);   // this hbs.registerPartials take the path
 
 // // Setup Static Directory to serve
 app.use(express.static(publicDirectoryPath));  // this becomes our main directory on our local host
-// app.use('/',router);
+app.use('/',router);
 
 // For index.hbs
 app.get('', (req, res) => {   // Making it Dynamic
@@ -67,13 +68,13 @@ app.get('/home', (req, res) => {   // Making it Dynamic
     });
 });
 
-app.listen(5000, () => {
-    console.log('Server is up on port 5000');
-})
+// app.listen(5000, () => {
+//     console.log('Server is up on port 5000');
+// })
 
-// const CONNECTION_URL = 'mongodb+srv://vraj:vraj123@cluster0.kbqn0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-// const PORT = process.env.PORT || 5000;
+const CONNECTION_URL = 'mongodb+srv://vraj:vraj123@cluster0.kbqn0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const PORT = process.env.PORT || 5000;
 
-// mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-//     .then(() => app.listen(PORT, () => console.log(`Server running on port : ${PORT}`)))
-//     .catch((error) => console.log(error.message));
+mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => app.listen(PORT, () => console.log(`Server running on port : ${PORT}`)))
+    .catch((error) => console.log(error.message));

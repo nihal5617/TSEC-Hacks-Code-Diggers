@@ -17,10 +17,12 @@ document.querySelector("#submit-button").addEventListener('click', async () => {
     if(about == "" || experience == "" || domain == "" || projects == "" || linkedin == "" || github == "") {
         return window.alert("Please Enter All Details");
     }
-    console.log(resume);
-    if(resume){
+    console.log(resume.files.length);
+    if(resume.files.length){
         return window.alert("No file selected");
     }
+
+    window.alert("")
 
     // const check = document.querySelector('#submit-button').checked;
     // console.log(check);

@@ -1,15 +1,19 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import Model from '../model.js';
-import router from '../routes/routes'
+// import express from 'express';
+// import mongoose from 'mongoose';
+const Model = require('../model.js');
+const { router } = require('../routes/routes');
 
-router.get('/', (req, res) => {
-    res.render("employee/addupdate", {
+console.log(router);
+
+router.route('/').get((req, res) => {
+    res.render('index-vraj', {
         viewTitle: "Insert Employee"
     });
 })
 
 router.post('/SignUp', (req, res) => {
+
+
     console.log(res.body);
     if (req.body._id == '')
         createUser(req, res);
@@ -17,7 +21,15 @@ router.post('/SignUp', (req, res) => {
         updateRecord(req, res);
 });
 
-export const createUser = async (req, res) => {
+router.route('/SignUp-2').post((req, res) => {
+    console.log(req.body);
+    // if (req.body._id == '')
+    //     createUser(req, res);
+    // else
+    //     updateRecord(req, res);
+});
+
+const createUser = async (req, res) => {
     const { userName,pass,about,experience,domain,projects,followCount,linkedin,github,contests,resumeFile } = req.body;
     const newUser = new Model({ userName,pass,about,experience,domain,projects,followCount,linkedin,github,contests,resumeFile });
     try {
@@ -27,4 +39,9 @@ export const createUser = async (req, res) => {
     } catch (error) {
         res.status(409).json({ message: error.message });
     }
+}
+
+module.exports = {
+    createUser,
+    router
 }
