@@ -68,6 +68,12 @@ app.get('/home', (req, res) => {   // Making it Dynamic
     });
 });
 
+app.get('/network', (req, res) => {   // Making it Dynamic
+    res.render('Networks', {
+        title: 'Weather',  
+        name: 'Ronnit Mirgh'
+    });
+});
 // app.listen(5000, () => {
 //     console.log('Server is up on port 5000');
 // })

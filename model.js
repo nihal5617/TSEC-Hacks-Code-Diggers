@@ -1,7 +1,9 @@
 const mongoose =require('mongoose');
 
 const postSchema = mongoose.Schema({
-    userName: String,
+    email: String,
+    fName:String,
+    lName:String,
     pass: String,
     about: String,
     experience: {
