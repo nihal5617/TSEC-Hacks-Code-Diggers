@@ -23,7 +23,7 @@ app.use(express.static(publicDirectoryPath));  // this becomes our main director
 
 // For index.hbs
 app.get('', (req, res) => {   // Making it Dynamic
-    res.render('index-vraj', {
+    res.render('SignUp-2', {
         title: 'Weather',  
         name: 'Ronnit Mirgh'
     });
@@ -48,6 +48,13 @@ app.get('/Login', (req, res) => {   // Making it Dynamic
 // For LogIn.hbs
 app.get('/profile', (req, res) => {   // Making it Dynamic
     res.render('index-ronnit', {
+        title: 'Weather',  
+        name: 'Ronnit Mirgh'
+    });
+});
+
+app.get('/Home', (req, res) => {   // Making it Dynamic
+    res.render('index-vraj', {
         title: 'Weather',  
         name: 'Ronnit Mirgh'
     });

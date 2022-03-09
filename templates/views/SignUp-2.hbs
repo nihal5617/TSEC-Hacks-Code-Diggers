@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{!--
+    <link rel="stylesheet" href="css/style.css"> --}}
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link rel="icon" href="img/logo final.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+<body class="flex flex-col min-h-screen font-body">
+    {{!-- <div class="flex flex-col min-h-screen"> --}}
+        <div class="grow">
+            {{>header}}
+
+            <section class="">
+                <main class="mx-auto text-lg">
+                    <div class="w-fit">
+                        <div class="h-full p-0 m-0 absolute">
+                            <img src="img/Untitled design.jpg">
+                            {{>footer}}
+                        </div>
+                    </div>
+            </section>
+            <section class="">
+                <main class="mx-auto px-5 py-5 pt-20 text-lg">
+                    <div class="flex justify-end gap-52">
+                        <div>best place to find collaboration for your team.</div>
+                        <div>
+                            <div class="border-2 drop-shadow-lg  w-11/12">
+                                <main class="bg-slate-100">
+                                    <div class="flex justify-center pt-5">
+                                        <form class="w-3/4">
+                                            <div class="flex justify-center text-3xl font-bold mb-6">
+                                                <p>Add More Details</p>
+                                            </div>
+                                            <div class="relative z-0 mb-6 w-full group">
+                                                <input type="text-area" name="about" id="about"
+                                                    class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-400 appearance-none   focus:outline-none focus:ring-0 focus:border-teal-600 peer"
+                                                    placeholder=" " required />
+                                                <label for="about"
+                                                    class="absolute text-sm text-gray-800 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-teal-600 peer-focus:peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">About You</label>
+                                            </div>
+                                            <div class="relative z-0 mb-6 w-full group">
+                                                <input type="number" name="experience" id="experience"
+                                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none   focus:outline-none focus:ring-0 focus:border-teal-600 peer"
+                                                    placeholder=" " required />
+                                                <label for="experience"
+                                                    class="absolute text-sm text-gray-800 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-teal-600 peer-focus:peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Experience(in Years)</label>
+                                            </div>
+                                            <div class="relative z-0 mb-6 w-full group">
+                                                <input type="text" name="domain" id="domain"
+                                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none   focus:outline-none focus:ring-0 focus:border-teal-600 peer"
+                                                    placeholder=" " required />
+                                                <label for="domain"
+                                                    class="absolute text-sm text-gray-800 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-teal-600 peer-focus:peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Doamins Expertise</label>
+                                            </div>
+                                            <div class="relative z-0 mb-6 w-full group">
+                                                <input type="text" name="projects" id="projects"
+                                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none   focus:outline-none focus:ring-0 focus:border-teal-600 peer"
+                                                    placeholder=" " required />
+                                                <label for="projects"
+                                                    class="absolute text-sm text-gray-800 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-teal-600 peer-focus:peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Projects Made</label>
+                                            </div>
+                                            <div class="grid xl:grid-cols-2 xl:gap-6">
+                                                <div class="relative z-0 mb-6 w-full group">
+                                                    <input type="text" name="linkedin" id="linkedin"
+                                                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none   focus:outline-none focus:ring-0 focus:border-teal-600 peer"
+                                                        placeholder=" " required />
+                                                    <label for="linkedin"
+                                                        class="absolute text-sm text-gray-800 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-teal-600 peer-focus:peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">LinkedIn</label>
+                                                </div>
+                                                <div class="relative z-0 mb-6 w-full group">
+                                                    <input type="text" name="github" id="github"
+                                                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none   focus:outline-none focus:ring-0 focus:border-teal-600 peer"
+                                                        placeholder=" " required />
+                                                    <label for="github"
+                                                        class="absolute text-sm text-gray-800 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-teal-600 peer-focus:peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">GitHub</label>
+                                                </div>
+                                            </div>
+                                            <div class="relative z-0 mb-6 w-full group">
+                                                <input type="file" name="resume" id="resume"
+                                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none   focus:outline-none focus:ring-0 focus:border-teal-600 peer"
+                                                    placeholder=" " required />
+                                                <label for="projects"
+                                                    class="absolute text-sm text-gray-800 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-teal-600 peer-focus:peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Upload Resume:</label>
+                                            </div>
+                                            <div class="grid xl:grid-cols-2 xl:gap-6">
+                                                <div class="flex mt-6 mb-6">
+                                                    <div class="flex items-center h-5">
+                                                        <input id="terms" aria-describedby="terms" type="checkbox"
+                                                            class="w-4 h-4 bg-gray-50 rounded border border-slate-900 focus:ring-3 focus:ring-teal-300"
+                                                            required>
+                                                    </div>
+                                                    <div class=" ml-3 text-sm">
+                                                        <label for="terms" class="font-medium text-gray-900">I agree
+                                                            with the <a href="#"
+                                                                class="text-teal-600 hover:underline">terms and
+                                                                conditions</a></label>
+                                                    </div>
+                                                </div>
+                                                <!-- <div style="height:0px;"></div> -->
+                                                <!-- <br> -->
+                                            </div>
+                                            <button type="button" id="submit-button"
+                                                class="text-white bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:ring-teal-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Register Yourself</button>
+                                            <div style="height:20px;"></div>
+                                        </form>
+                                        {{!-- <br> --}}
+                                    </div>
+                                </main>
+                            </div>
+                        </div>
+                    </div>
+
+                </main>
+            </section>
+        </div>
+</body>
+
+</html>
