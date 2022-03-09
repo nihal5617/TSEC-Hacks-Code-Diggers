@@ -2,6 +2,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const path = require('path');
+const mongoose= require('mongoose');
 
 const app = express();
 
@@ -20,19 +21,16 @@ app.use(express.static(publicDirectoryPath));  // this becomes our main director
 
 // For index.hbs
 app.get('', (req, res) => {   // Making it Dynamic
-    res.render('index', {
+    res.render('index-vraj', {
         title: 'Weather',  
         name: 'Ronnit Mirgh'
     });
 });
 
-app.listen(5000, () => {
-    console.log('Server is up on port 5000');
-})
 
-// const CONNECTION_URL = 'mongodb+srv://nihal:nihal123@cluster0.rlex0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-// const PORT = process.env.PORT || 5000;
+const CONNECTION_URL = 'mongodb+srv://vraj:vraj123@cluster0.kbqn0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const PORT = process.env.PORT || 5000;
 
-// mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-//     .then(() => app.listen(PORT, () => console.log(`Server running on port : ${PORT}`)))
-//     .catch((error) => console.log(error.message));
+mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => app.listen(PORT, () => console.log(`Server running on port : ${PORT}`)))
+    .catch((error) => console.log(error.message));
