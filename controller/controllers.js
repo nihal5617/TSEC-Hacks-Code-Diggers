@@ -23,16 +23,17 @@ router.post('/Signup', (req, res) => {
 
 router.route('/SignUp-2').post((req, res) => {
     console.log(req.body);
-    res.send('NIHAL');
     // if (req.body._id == '')
-    //     createUser(req, res);
+        createUser(req, res);
     // else
     //     updateRecord(req, res);
+    res.send('NIHAL');
 });
 
 const createUser = async (req, res) => {
     const { userName,pass,about,experience,domain,projects,followCount,linkedin,github,contests,resumeFile } = req.body;
-    const newUser = new Model({ userName,pass,about,experience,domain,projects,followCount,linkedin,github,contests,resumeFile });
+    // const newUser = new Model({ userName,pass,about,experience,domain,projects,followCount,linkedin,github,contests,resumeFile });
+    const newUser = new Model(req.body);
     try {
         await newUser.save();
 
