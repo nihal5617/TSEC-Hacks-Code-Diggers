@@ -12,7 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.3",
-    "hbs": "^4.2.0"
+    "hbs": "^4.2.0",
+    "nodemon": "^2.0.15"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",
