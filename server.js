@@ -37,7 +37,7 @@ app.get('/SignUp', (req, res) => {   // Making it Dynamic
     });
 });
 
-app.get('/SignUp/More', (req, res) => {   // Making it Dynamic
+app.get('/SignUp-2', (req, res) => {   // Making it Dynamic
     res.render('SignUp-2', {
         title: 'Weather',  
         name: 'Ronnit Mirgh'

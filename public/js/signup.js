@@ -1,21 +1,30 @@
 document.querySelector("#submit-button").addEventListener('click', async () => {
-    const allInput = document.querySelectorAll('input')
-    for(let i = 0 ; i < allInput.length ;i++){
-        console.log(allInput[i].value);
-        if(allInput[i].value == ""){
-            return window.alert("Please Enter All Details");
-        }
+    const email = document.querySelector("#email").value;
+    // console.log(email);
+    const password = document.querySelector('#password').value;
+    // console.log(password);
+    const confirmPassword = document.querySelector('#confirm-password').value;
+    // console.log(confirmPassword);
+    const fname = document.querySelector("#fname").value;
+    // console.log(fname);
+    const lname = document.querySelector("#lname").value;
+    // console.log(lname);
+    
+    if(password == "" || email == "" || confirmPassword == "" || fname == "" || lname == "") {
+        return window.alert("Please Enter All Details");
     }
 
-    const email = document.querySelector("#email").value;
-    const password = document.querySelector("#password").value;
     if(password != document.querySelector("#confirm-password").value ){
         document.querySelector("#confirm-password").value ="";
         document.querySelector("#password").value ="";
         return window.alert("Passwords do not match");
     }
-    const fname = document.querySelector("#fname").value;
-    const lname = document.querySelector("#lname").value;
+
+    // const check = document.querySelector('#submit-button').checked;
+    // console.log(check);
+    // if(check != true) {
+    //     return window.alert("Please accept all the term and conditions");
+    // }
 
     const data = {
         email : email,
@@ -24,16 +33,19 @@ document.querySelector("#submit-button").addEventListener('click', async () => {
         lname : lname,
     }
 
-    const res = await axios({
-        method: "POST",
-        url: `http://localhost:3000/SignUp`,
-        data : data,
-        validateStatus: () => true,
-    })
-
-    if(res.status == 200){
+    // const res = await axios({
+    //     method: "POST",
+    //     url: `http://localhost:5000/SignUp`,
+    //     data : data,
+    //     validateStatus: () => true,
+    // })
+    const res = 200;
+    console.log(data);
+    if(res == 200){
+        console.log('hello');
+        console.log(window.location.href);
+        window.location.href = "http://localhost:5000/SignUp-2";
         window.alert("Registration Succesful");
-        window.location.href = "http://localhost:3000/Login"
     }
     else if (res.status == 409){
         return window.alert("Email already exists")
