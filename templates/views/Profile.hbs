@@ -23,10 +23,26 @@
     {{!-- <div class="flex flex-col min-h-screen"> --}}
         <div class="grow">
             {{>header}}
+
+            <nav style="@media (max-width:500px){background-color: teal;}"
+                class="bg-purple-200 ease-in-out duration-700 md:flex justify-between content-around text-slate-100 px-7 md:px-14 md:py-4">
             
+                <div class="flex justify-between gap-8">
+                    <div class="text-md md:text-xl p-2 py-3 border-2 border-purple-200 rounded-lg hover:border-solid hover:border-purple-400 md-px-10"><button id="above" class="above_b">About</div>
+                    <div class="text-md md:text-xl p-2 py-3 border-2 border-purple-200 rounded-lg hover:border-solid hover:border-purple-400 md-px-10"><button id="experience" class="experience_b">Experience</button> </div>
+                    <div class="text-md md:text-xl p-2 py-3 border-2 border-purple-200 rounded-lg hover:border-solid hover:border-purple-400 md-px-10"><button id="projects" class="projects_b">Projects</button></div>
+                    <div class="text-md md:text-xl p-2 py-3 border-2 border-purple-200 rounded-lg hover:border-solid hover:border-purple-400 md-px-10"><button id="contact" class="contact_b">Contact</button></div>
+                </div>
+            </nav>
+
+            <div id="above-contain" class="above_b">Above</div>
+            <div id="experience-contain" class="experience_b" style="display: none;">Experience</div>
+            <div id="projects-contain" class="projects_b" style="display: none;">Projects</div>
+            <div id="contact-contain" class="contact_b" style="display: none;">ContaCT</div>
         </div>
 
         {{>footer}}
     {{!-- </div> --}}
 </body>
+<script src="js/profile.js"></script>
 </html>
