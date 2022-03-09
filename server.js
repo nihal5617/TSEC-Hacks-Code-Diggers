@@ -3,6 +3,7 @@ const express = require('express');
 const hbs = require('hbs');
 const path = require('path');
 const mongoose= require('mongoose');
+// const {router} = require('./routes/routes')
 
 const app = express();
 
@@ -18,10 +19,11 @@ hbs.registerPartials(partialsPath);   // this hbs.registerPartials take the path
 
 // // Setup Static Directory to serve
 app.use(express.static(publicDirectoryPath));  // this becomes our main directory on our local host
+// app.use('/',router);
 
 // For index.hbs
 app.get('', (req, res) => {   // Making it Dynamic
-    res.render('index-vraj', {
+    res.render('index-ronnit', {
         title: 'Weather',  
         name: 'Ronnit Mirgh'
     });
