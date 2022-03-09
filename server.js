@@ -37,6 +37,13 @@ app.get('/SignUp', (req, res) => {   // Making it Dynamic
     });
 });
 
+app.get('/SignUp-2', (req, res) => {   // Making it Dynamic
+    res.render('SignUp-2', {
+        title: 'Weather',  
+        name: 'Ronnit Mirgh'
+    });
+});
+
 // For LogIn.hbs
 app.get('/Login', (req, res) => {   // Making it Dynamic
     res.render('Login', {
@@ -47,7 +54,14 @@ app.get('/Login', (req, res) => {   // Making it Dynamic
 
 // For LogIn.hbs
 app.get('/profile', (req, res) => {   // Making it Dynamic
-    res.render('index-ronnit', {
+    res.render('Profile', {
+        title: 'Weather',  
+        name: 'Ronnit Mirgh'
+    });
+});
+
+app.get('/home', (req, res) => {   // Making it Dynamic
+    res.render('HomeAfter', {
         title: 'Weather',  
         name: 'Ronnit Mirgh'
     });

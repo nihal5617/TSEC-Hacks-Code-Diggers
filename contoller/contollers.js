@@ -9,7 +9,8 @@ router.get('/', (req, res) => {
     });
 })
 
-router.post('/register/user', (req, res) => {
+router.post('/SignUp', (req, res) => {
+    console.log(res.body);
     if (req.body._id == '')
         createUser(req, res);
     else
