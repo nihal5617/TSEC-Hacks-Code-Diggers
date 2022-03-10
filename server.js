@@ -77,6 +77,13 @@ app.get('/network', (req, res) => {   // Making it Dynamic
     });
 });
 
+app.get('/cb', (req, res) => {   // Making it Dynamic
+    res.render('Chatbox', {
+        title: 'Weather',
+        name: 'Ronnit Mirgh'
+    });
+});
+
 app.get('/*', (req, res) => {   // Making it Dynamic
     res.render('Error', {
         Message: 'Oops! There was some error',
