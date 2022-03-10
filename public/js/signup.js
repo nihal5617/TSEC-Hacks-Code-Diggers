@@ -43,7 +43,7 @@ document.querySelector("#submit-button").addEventListener('click', async () => {
     // const res = 200;
     // console.log(data);
     // console.log(res.status);
-
+    console.log(res);
     if(res.status == 200){
         // console.log('hello');
         // console.log(window.location.href);
