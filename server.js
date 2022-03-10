@@ -57,8 +57,18 @@ app.get('/Login', (req, res) => {   // Making it Dynamic
 // For Profile.hbs
 app.get('/profile', (req, res) => {   // Making it Dynamic
     res.render('Profile', {
-        title: 'Weather',
-        name: 'Nihal Gupta'
+        email: "nihal@gmail.com",
+        fName: "Nihal",
+        lName: "Gupta",
+        pass: "nihal",
+        about: "Known with coding languages like C++,Python,Html Scored 191 in CS in which C++ and html was there as coding languages and Microprocessor and microcontroller in hardware Got overall 88.46% in 12th with 100/100 in maths Got 97.27 percentile in CET",
+        experience: 1,
+        domain: ["AppDev", "WebDev"],
+        projects: ["StroyTeller", "ABC", "FarmGrow"],
+        followCount: 120,
+        linkedin: "nihal123",
+        github: "nihal123",
+        contests: ["Code-Odyssey", "TSEC-Hacks", "LOC 3.0"],
     });
 });
 
@@ -99,7 +109,6 @@ const PORT = process.env.PORT || 5000;
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => app.listen(PORT, () => console.log(`Server running on port : ${PORT}`)))
     .catch((error) => console.log(error.message));
-
 
 
 const data = [{

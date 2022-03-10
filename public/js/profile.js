@@ -1,7 +1,7 @@
 const btns = [document.querySelector('#above'), document.querySelector('#experience'), document.querySelector('#projects'), document.querySelector('#contact')];
 const btnDisplay = [document.querySelector('#above-contain'), document.querySelector('#experience-contain'), document.querySelector('#projects-contain'), document.querySelector('#contact-contain')];
-console.log(btnDisplay)
-console.log(btns)
+// console.log(btnDisplay)
+// console.log(btns)
 btns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
         btnDisplay.forEach((open) => {
