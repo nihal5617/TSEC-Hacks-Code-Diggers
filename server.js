@@ -102,6 +102,62 @@ mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: tr
 
 
 
+<<<<<<< HEAD
+const data = [{
+    email: "nihal@gmail.com",
+    fName: "Nihal",
+    lName: "Gupta",
+    pass: "nihal",
+    about: "Known with coding languages like C++,Python,Html Scored 191 in CS in which C++ and html was there as coding languages and Microprocessor and microcontroller in hardware Got overall 88.46% in 12th with 100/100 in maths Got 97.27 percentile in CET",
+    experience: 1,
+    domain: ["AppDev", "WebDev"],
+    projects: ["StroyTeller", "ABC", "FarmGrow"],
+    followCount: 120,
+    linkedin: "nihal123",
+    github: "nihal123",
+    contests: ["Code-Odyssey", "TSEC-Hacks", "LOC 3.0"],
+}, {
+    email: "rujuta@gmail.cpm",
+    fName: "Rujuta",
+    lName: "Joshi",
+    pass: "rujuta",
+    about: "Currently learning Python , advancing web dev and also will be a full stack developer at the end of this month. Made some projects on AppDev and web dev so visit my github profile.",
+    experience: 2,
+    domain: ["AppDev", "WebDev"],
+    projects: ["Calculator", "UI-Maker", "NotesApp"],
+    followCount: 110,
+    linkedin: "rujuta123",
+    github: "rujuta123",
+    contests: ["LOC 3.0", "TSEC-Hacks"],
+}, , {
+    email: "vraj@gmail.com",
+    fName: "Vraj",
+    lName: "Desai",
+    pass: "vraj",
+    about: "I am currently in my 2nd year I.T and having a first time experience of hackathon. My skill is fronted web development and excited to kick start with it.",
+    experience: 1,
+    domain: ["AppDev", "WebDev"],
+    projects: ["Calculator", "UI-Maker", "NotesApp"],
+    followCount: 140,
+    linkedin: "vrajdomgy",
+    github: "vrajdomgy",
+    contests: ["Tsec-Hacks"],
+}, {
+    email: "ronnit",
+    fName: "Ronnit",
+    lName: "Mirgh",
+    pass: "ronnit",
+    about: "Hi, I am Ronnit Mirgh, a student at IT branch of Dwarkadas Jivanlal Sanghvi college of Engineering. I m good at competitive programming. I take part in various contests on codechef and love to solve them and earn ranking. I know C, C++ and JAVA language. I also have knowledge about web development including both frontend and backend. I do web development using Javascript and NodeJs. I have even made many projects which you can check it out on my GitHub account: https://github.com/Ronnit3012",
+    experience: 2,
+    domain: ["AI-ML", "AppDev", "WebDev"],
+    projects: ["Calculator", "UI-Maker", "NotesApp"],
+    followCount: 140,
+    linkedin: "ronnit123",
+    github: "ronnit123",
+    contests: ["Code-Odyssey", "TSEC-Hacks", "LOC 3.0"],
+}
+]
+=======
 // const data = [{
 //     email: "nihal@gmail.com",
 //     fName: "Nihal",
@@ -160,3 +216,4 @@ mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: tr
 //     resumeFile: String,
 // }
 // ]
+>>>>>>> 85e5ec93d91bd559beeceb4f1a4a82bcd997d662
