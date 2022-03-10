@@ -25,28 +25,28 @@ document.querySelector("#submit-button").addEventListener('click', async () => {
     if(check === false) {
         return window.alert("Please accept all the terms and conditions");
     }
-    console.log("im here");
+    // console.log("im here");
     const data = {
         email : email,
         password:password,
         fname : fname,
         lname : lname,
     }
-    console.log(data);
-        const res = await axios({
-            method: "POST",
-            url: `http://localhost:5000/SignUp-2`,
-            data : data,
-            validateStatus: () => true,
-        })
-
-        // const res = 200;
     // console.log(data);
-    console.log(res.status);
+    const res = await axios({
+        method: "POST",
+        url: `http://localhost:5000/SignUp-2`,
+        data : data,
+        validateStatus: () => true,
+    })
+
+    // const res = 200;
+    // console.log(data);
+    // console.log(res.status);
 
     if(res.status == 200){
-        console.log('hello');
-        console.log(window.location.href);
+        // console.log('hello');
+        // console.log(window.location.href);
         window.location.href = "http://localhost:5000/SignUp-2";
         window.alert("Registration Succesful");
     }

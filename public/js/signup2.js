@@ -17,18 +17,17 @@ document.querySelector("#submit-button").addEventListener('click', async () => {
     if(about == "" || experience == "" || domain == "" || projects == "" || linkedin == "" || github == "") {
         return window.alert("Please Enter All Details");
     }
-    console.log(resume.files.length);
-    if(resume.files.length){
-        return window.alert("No file selected");
-    }
 
-    window.alert("")
-
-    // const check = document.querySelector('#submit-button').checked;
-    // console.log(check);
-    // if(check != true) {
-    //     return window.alert("Please accept all the term and conditions");
+    // console.log(resume.files.length);
+    // if(resume.files.length){
+    //     return window.alert("No file selected");
     // }
+
+    const check = document.querySelector('#terms').checked;
+    console.log(check);
+    if(check === false) {
+        return window.alert("Please accept all the terms and conditions");
+    }
 
     const data = {
         about,
@@ -40,17 +39,17 @@ document.querySelector("#submit-button").addEventListener('click', async () => {
         resume
     }
 
-    // const res = await axios({
-    //     method: "POST",
-    //     url: `http://localhost:5000/SignUp`,
-    //     data : data,
-    //     validateStatus: () => true,
-    // })
-    const res = 200;
-    console.log(data);
-    if(res == 200){
-        console.log('hello');
-        console.log(window.location.href);
+    const res = await axios({
+        method: "POST",
+        url: `http://localhost:5000/Login`,
+        data : data,
+        validateStatus: () => true,
+    })
+
+    // console.log(data);
+    if(res.status == 200){
+        // console.log('hello');
+        // console.log(window.location.href);
         window.location.href = "http://localhost:5000/Login";
         window.alert("Registration Succesful");
     }
