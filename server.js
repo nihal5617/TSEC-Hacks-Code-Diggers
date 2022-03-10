@@ -69,6 +69,7 @@ app.get('/profile', (req, res) => {   // Making it Dynamic
         linkedin: "nihal123",
         github: "nihal123",
         contests: ["Code-Odyssey", "TSEC-Hacks", "LOC 3.0"],
+        name: 'Nihal Gupta'
     });
 });
 
