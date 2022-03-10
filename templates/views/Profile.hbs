@@ -51,7 +51,7 @@
                                 <div class="flex justify-left p-10">
                                     <form class="w-100">
                                         <div class="relative z-0 mb-6 w-full group">
-                                            <input type="email" name="floating_email" id="email"
+                                            <input type="email" name="floating_email" id="email" value={{email}}
                                                 class="block py-2.5 px-0 w-full text-2xl bg-transparent border-0 border-b-2 border-gray-400 appearance-none   focus:outline-none focus:ring-0 focus:border-teal-600 peer"
                                                 placeholder=" " required />
                                             <label for="floating_email"
@@ -59,23 +59,15 @@
                                                 address</label>
                                         </div>
                                         <div class="relative z-0 mb-6 w-full group">
-                                            <input type="password" name="floating_password" id="password"
+                                            <input type="password" name="floating_password" id="password" value={{pass}}
                                                 class="block py-2.5 px-0 w-full text-2xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none   focus:outline-none focus:ring-0 focus:border-teal-600 peer"
                                                 placeholder=" " required />
                                             <label for="floating_password"
                                                 class="absolute text-2xl text-gray-800 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-teal-600 peer-focus:peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
                                         </div>
-                                        <div class="relative z-0 mb-6 w-full group">
-                                            <input type="password" name="repeat_password" id="confirm-password"
-                                                class="block py-2.5 px-0 w-full text-2xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none   focus:outline-none focus:ring-0 focus:border-teal-600 peer"
-                                                placeholder=" " required />
-                                            <label for="floating_repeat_password"
-                                                class="absolute text-2xl text-gray-800 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-teal-600 peer-focus:peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm
-                                                password</label>
-                                        </div>
-                                        <div class="grid xl:grid-cols-2 xl:gap-6">
+                                        {{!-- <div class="grid xl:grid-cols-2 xl:gap-6"> --}}
                                             <div class="relative z-0 mb-6 w-full group">
-                                                <input type="text" name="floating_first_name" id="fname"
+                                                <input type="text" name="floating_first_name" id="fname" value={{fName}}
                                                     class="block py-2.5 px-0 w-full text-2xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none   focus:outline-none focus:ring-0 focus:border-teal-600 peer"
                                                     placeholder=" " required />
                                                 <label for="floating_first_name"
@@ -83,14 +75,14 @@
                                                     name</label>
                                             </div>
                                             <div class="relative z-0 mb-6 w-full group">
-                                                <input type="text" name="floating_last_name" id="lname"
+                                                <input type="text" name="floating_last_name" id="lname" value={{lName}}
                                                     class="block py-2.5 px-0 w-full text-2xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none   focus:outline-none focus:ring-0 focus:border-teal-600 peer"
                                                     placeholder=" " required />
                                                 <label for="floating_last_name"
                                                     class="absolute text-2xl text-gray-800 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-teal-600 peer-focus:peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last
                                                     name</label>
                                             </div>
-                                        </div>
+                                        {{!-- </div> --}}
                                     </form>
                                     {{!-- <br> --}}
                                 </div>
@@ -106,7 +98,7 @@
                                             <textarea
                                                 class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                                                 id="exampleFormControlTextarea1" rows="6" cols="50"
-                                                placeholder="Your message"></textarea>
+                                                placeholder="Your message">{{about}}</textarea>
                                         </div>
                                 </div>
                                 </form>
@@ -123,14 +115,14 @@
                                 <div class="flex justify-left p-10">
                                     <form class="w-100">
                                         <div class="relative z-0 mb-6 w-full group">
-                                                <input type="number" name="experience" id="experience"
+                                                <input type="number" name="experience" id="experience" value={{experience}}
                                                     class="block py-2.5 px-0 w-full text-2xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none   focus:outline-none focus:ring-0 focus:border-teal-600 peer"
                                                     placeholder=" " required />
                                                 <label for="experience"
                                                     class="absolute text-2xl text-gray-800 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-teal-600 peer-focus:peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Experience(in Years)</label>
                                         </div>
                                         <div class="relative z-0 mb-6 w-full group">
-                                                <input type="text" name="domain" id="domain"
+                                                <input type="text" name="domain" id="domain" value={{domain}}
                                                     class="block py-2.5 px-0 w-full text-2xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none   focus:outline-none focus:ring-0 focus:border-teal-600 peer"
                                                     placeholder=" " required />
                                                 <label for="domain"
@@ -144,7 +136,7 @@
                         <div class="border-2 drop-shadow-sm  w-1/3 bg-slate-50">
                             <main class=>
                                 <div class="relative z-0 mb-6 w-full group">
-                                    <input type="file" name="resume" id="resume"
+                                    <input type="file" name="resume" id="resume" 
                                         class="block p-20 pl-20 py-30 px-0 w-full text-2xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none   focus:outline-none focus:ring-0 focus:border-teal-600 peer"
                                         placeholder=" " required />
                                     <label for="projects"
@@ -160,14 +152,14 @@
                     <main class="mx-auto px-5 py-5 pt-5 text-lg flex flex-col align-middle gap-20">
             <div class="grid xl:grid-cols--1 xl:gap-6 justify-around">
                 <div class="relative z-0 mb-6 w-full group">
-                    <input type="text" name="linkedin" id="linkedin"
+                    <input type="text" name="linkedin" id="linkedin"  value={{linkedin}}
                     class="block p-5 w-full text-2xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none   focus:outline-none focus:ring-0 focus:border-teal-600 peer"
                     placeholder=" " required />
                     <label for="linkedin"
                     class="absolute text-2xl text-gray-800 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-teal-600 peer-focus:peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">LinkedIn</label>
                 </div>
                 <div class="relative z-0 mb-6 w-full group">
-                    <input type="text" name="github" id="github"
+                    <input type="text" name="github" id="github" value={{github}}
                     class="block p-5 w-full text-2xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none   focus:outline-none focus:ring-0 focus:border-teal-600 peer"
                     placeholder=" " required />
                     <label for="github"
