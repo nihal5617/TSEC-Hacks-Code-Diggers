@@ -120,7 +120,7 @@ const data = [{
     fName: "Rujuta",
     lName: "Joshi",
     pass: "rujuta",
-    about: "Hey I'm Rujuta",
+    about: "Currently learning Python , advancing web dev and also will be a full stack developer at the end of this month. Made some projects on AppDev and web dev so visit my github profile.",
     experience: 2,
     domain: ["AppDev", "WebDev"],
     projects: ["Calculator", "UI-Maker", "NotesApp"],
@@ -150,13 +150,9 @@ const data = [{
     experience: 2,
     domain: ["AI-ML", "AppDev", "WebDev"],
     projects: ["Calculator", "UI-Maker", "NotesApp"],
-    followCount: {
-        typr: Number,
-        default: 0
-    },
-    linkedin: String,
-    github: String,
-    contests: [String],
-    resumeFile: String,
+    followCount: 140,
+    linkedin: "ronnit123",
+    github: "ronnit123",
+    contests: ["Code-Odyssey", "TSEC-Hacks", "LOC 3.0"],
 }
 ]
